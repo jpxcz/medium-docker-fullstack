@@ -1,0 +1,12 @@
+# docker-compose.yaml
+version: "3.5"
+services:
+  client:
+    hostname: client
+    build:
+      dockerfile: Dockerfile
+      context: ./client
+    volumes:
+      - /app/node_modules
+      - ./client/src:/app/src
+      - ./client/public:/app/public
